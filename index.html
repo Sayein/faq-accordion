@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Work Sans", sans-serif;
+    }
+
+    .container{
+      height: 100vh;
+      background-image: url(./assets/images/background-pattern-desktop.svg);
+      background-position: right top;
+      background-repeat: no-repeat;
+      background-color: #f9f0ff;
+      height:100vh;
+      padding: 25px;
+    }
+
+    .faq-container{
+      display: grid;
+      place-items: center;
+      height:100%;
+    }
+
+    .faq{
+      padding: 30px 30px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .faq-header{
+      display: flex;
+      align-items: center;
+    }
+
+    .header-icon img{
+      width: 30px;
+    }
+
+    h1{
+      font-size: xxx-large;
+      padding-left: 25px;
+    }
+
+    .faq-question-answer{
+      padding-top: 30px;
+      border-bottom:2px solid #f9f0ff;
+      cursor: pointer;
+    }
+
+    .container .faq-question-answer:last-of-type{
+      border-bottom: none;
+    }
+
+    .faq-questions-icons{
+      display: flex;
+      align-items: start;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .container .faq-question-answer:last-of-type .faq-questions-icons h2{
+      padding-bottom: unset;
+    }
+
+    h2{
+      font-size: large;
+      font-weight: 600;
+      padding-bottom: 25px;
+      transition: 0.5s;
+      padding-right: 30px;
+    }
+
+    .faq-question-answer:hover .faq-questions-icons h2{
+       color: #a921e3;
+    }
+
+    .faq-plus-minus-icon{
+      width: 30px;
+      height: 30px;
+      background-image: url("assets/images/icon-plus.svg");
+    }
+
+    .faq-answers{
+      height: 0px;
+      transition: 0.5s;
+    }
+
+    .faq-answers p{
+      display: none;
+      transition: 0.5s;
+    }
+
+    p{
+      padding: 5px 0 30px 0;
+      color: #858585;
+      font-weight:400;
+      font-size: 15px;
+      line-height: 21px;
+      max-width:500px;
+    }
+
+    .open-faq .faq-answers{
+       height: unset;
+    }
+
+    .open-faq .faq-answers p{
+      display: block;
+    }
+
+    .open-faq:hover .faq-questions-icons h2{
+       color:unset;
+    }
+
+    .open-faq .faq-questions-icons .faq-plus-minus-icon{
+      background-image: url("assets/images/icon-minus.svg");
+    }
+ 
+    @media (max-width:767px) {
+
+      .faq{
+        padding: 20px 20px;
+      }
+
+      .header-icon img{
+        width: 25px;
+      }
+
+      h1{
+        font-size: xx-large;
+        padding-left: 25px;
+      }
+
+      h2{
+        font-size: 13px;
+        font-weight: 600;
+        padding-bottom: 25px;
+        transition: 0.5s;
+        padding-right: 0px;
+        max-width: 200px;
+      }
+
+      p{
+        max-width: 200px;
+        font-size: 13px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+   <div class="faq-container">
+     <div class="faq">
+        <div class="faq-header">
+           <div class="header-icon"><img src="./assets/images/icon-star.svg" alt="star image"></div>
+           <h1 class="heading">FAQs</h1>
+        </div>
+        <div class="faq-question-answer">
+          <div class="faq-questions-icons">
+            <h2>What is Frontend Mentor and how will it help me?</h2>
+            <div class="faq-plus-minus-icon">
+              <!-- <img src="./assets/images/icon-plus.svg" alt=""> -->
+            </div>
+          </div>
+          <div class="faq-answers"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed quae atque, adipisci deserunt suscipit ipsam esse consequuntur facilis nam ullam aliquid soluta impedit? Optio ad, beatae numquam eligendi provident quam?</p></div>
+        </div>
+        <div class="faq-question-answer">
+          <div class="faq-questions-icons">
+            <h2>Is Frontend Mentor free?</h2>
+            <div class="faq-plus-minus-icon">
+              <!-- <img src="./assets/images/icon-plus.svg" alt=""> -->
+            </div>
+          </div>
+          <div class="faq-answers"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed quae atque, adipisci deserunt suscipit ipsam esse consequuntur facilis nam ullam aliquid soluta impedit? Optio ad, beatae numquam eligendi provident quam?</p></div>
+        </div>
+        <div class="faq-question-answer">
+          <div class="faq-questions-icons">
+            <h2>Can I use Frontend Mentor projects in my porfolio?</h2>
+            <div class="faq-plus-minus-icon">
+              <!-- <img src="./assets/images/icon-plus.svg" alt=""> -->
+            </div>
+          </div>
+          <div class="faq-answers"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed quae atque, adipisci deserunt suscipit ipsam esse consequuntur facilis nam ullam aliquid soluta impedit? Optio ad, beatae numquam eligendi provident quam?</p></div>
+        </div>
+        <div class="faq-question-answer">
+          <div class="faq-questions-icons">
+            <h2>How can I get help if I'm stuck on a challenge?</h2>
+            <div class="faq-plus-minus-icon">
+              <!-- <img src="./assets/images/icon-plus.svg" alt=""> -->
+            </div>
+          </div>
+          <div class="faq-answers"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed quae atque, adipisci deserunt suscipit ipsam esse consequuntur facilis nam ullam aliquid soluta impedit? Optio ad, beatae numquam eligendi provident quam?</p></div>
+        </div>
+     </div>
+   </div>
+</div>
+
+
+<script>
+
+ let faqQuestions=document.querySelectorAll(".faq-question-answer");
+
+ faqQuestions.forEach(element => {
+    element.addEventListener("click", function() {
+      // faqQuestions.forEach(b => b.classList.remove("open-faq"));
+      // this.classList.add("open-faq");
+
+      if (this.classList.contains('open-faq')) {
+        this.classList.remove('open-faq');
+      } else {
+        // Remove 'active' from all boxes
+        faqQuestions.forEach(b => b.classList.remove('open-faq'));
+
+        // Toggle 'active' on the clicked one
+        this.classList.toggle('open-faq');
+      }
+
+    })
+});
+
+
+</script>
+</body>
+</html>
